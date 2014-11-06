@@ -24,7 +24,7 @@ public class Task {
     }
 
     /**
-     *
+     * Constructor initalises the program
      */
     Task() {
         taskDescription = "";
@@ -33,7 +33,7 @@ public class Task {
     }
 
     /**
-     *
+     * set task description
      */
     public void setTaskDesc(String taskdesc) {
         this.taskDescription = taskdesc;
