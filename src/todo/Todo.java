@@ -17,7 +17,7 @@ import java.util.Scanner;
 /**
  * Todo list program
  *
- * @author jason
+ * @author Jason D'souza student at Monash University
  */
 public class Todo {
 
@@ -42,7 +42,8 @@ public class Todo {
         tasks = new ArrayList();
         getDone = new Task();
         // load up list of tasks
-        fileReader();
+        fileReader();// sometimes get an error here about ArrayIndexOutofBoundsException
+        
         // Adding new tasks from user        
         boolean test = false;
         while (test == false) {
@@ -145,6 +146,10 @@ public class Todo {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                };
             }
         }
 
