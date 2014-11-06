@@ -8,7 +8,7 @@ package todo;
 /**
  * Task
  *
- * @author jason
+ * @author Jason D'souza student at Monash University
  */
 public class Task {
 
