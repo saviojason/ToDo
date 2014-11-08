@@ -80,7 +80,8 @@ public class Todo {
             // Y results in program continuing. N results in while loop stopping.
             if ((continueya.contentEquals("N")) || continueya.contentEquals("n")) {
                 test = true;
-                writeFile("Todo.txt");
+                Controller write = new Controller();
+                write.writeFile("Todo.txt");
             } else {
                 continue;
             }
@@ -94,122 +95,11 @@ public class Todo {
      */
     public void loadTasks() {
         // load up list of tasks
-        fileReader1();// sometimes get an error here about ArrayIndexOutofBoundsException
+        Controller reader = new Controller();
+        reader.fileReader1();// sometimes get an error here about ArrayIndexOutofBoundsException
         addTask();
     }
 
-    /**
-     * writeFile
-     */
-    public void writeFile(String filename) {
-        File file = new File(filename);
-        // creates the file            
 
-        try {
-            file.createNewFile();
-            // creates a FileWriter Object
-            FileWriter writer = new FileWriter(file);
-            // Writes the content to the file    
-            for (int k = 0; k < tasks.size(); k++) {
-                String content = tasks.get(k).getTaskDesc() + "," + tasks.get(k).getDueDate() + "," + tasks.get(k).getPriority() + "," + tasks.get(k).getStatus() + "\n";
-                //Task task = tasks.get(k);
-                //System.out.println(task.getTaskDesc());
-                
-                
-                //writer.write(content);
-            }
-            writer.flush();
-            writer.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-
-    }
-
-    /**
-     * fileReader
-     */
-    public void fileReader() {
-        //Creates a FileReader Object
-        BufferedReader br = null;
-        String line = "";
-        String cvsSplitBy = ",";
-
-        try {
-            br = new BufferedReader(new FileReader("Todo.txt"));
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-
-        try {
-
-            while ((line = br.readLine()) != null) {
-
-                // use comma as separator
-                String[] getdone = line.split(cvsSplitBy);
-
-                //String tmp = tasks.get(i).getTaskDesc() + "," + tasks.get(i).getDueDate() + "," + tasks.get(i).getPriority() + tasks.get(i).getStatus() +"\n";
-                System.out.println("Task Description : " + getdone[0]);
-                System.out.println("Due Date : " + getdone[1]);
-                System.out.println("Priority : " + getdone[2]);
-                System.out.println("Status : " + getdone[3]);
-                getDone.setTaskDesc(getdone[0]);
-                getDone.setDueDate(getdone[1]);
-                getDone.setPriority(getdone[2]);
-                getDone.setStatus(getdone[3]);
-                tasks.add(getDone);
-
-            }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (br != null) {
-                try {
-                    br.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                };
-            }
-        }
-
-        System.out.println("Done");
-
-    }
-
-    public void fileReader1() {
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader("Todo.txt"));
-            String line = reader.readLine();
-            String cvsSplitBy = ",";
-
-            while (line != null) {
-
-                String[] getdone = line.split(cvsSplitBy);
-                System.out.println("Task Description : " + getdone[0]);
-                System.out.println("Due Date : " + getdone[1]);
-                System.out.println("Priority : " + getdone[2]);
-                System.out.println("Status : " + getdone[3]);
-                getDone.setTaskDesc(getdone[0]);
-                getDone.setDueDate(getdone[1]);
-                getDone.setPriority(getdone[2]);
-                getDone.setStatus(getdone[3]);
-                tasks.add(getDone);
-                line = reader.readLine();
-            }
-            reader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println(e);
-            //the specified file could not be found
-        } catch (IOException e) {
-            //something went wrong with reading or closing
-            System.out.println(e);
-        }
-
-    }
 
 }
