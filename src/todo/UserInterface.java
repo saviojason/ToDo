@@ -15,6 +15,16 @@ import java.util.Scanner;
  *
  */
 public class UserInterface {
+    
+    private Todo todo1;
+            
+    public static void main(String[] args){
+        UserInterface ui = new UserInterface();
+        ui.displayMenu();
+        
+    }
+    
+
 
     public void displayMenu() {
         System.out.println("Menu for ToDo System");
@@ -23,12 +33,15 @@ public class UserInterface {
         System.out.println("Option c: Update Todo");
         System.out.println("Option d: Generate things due today");
         System.out.println("Option e: Exit System");
+        System.out.println("Please enter your choice");
+        scanMenuChoice();
     }
 
     /**
      * Method to scan choice from the keyboard.
      */
     private void scanMenuChoice() {
+        
         Scanner input = new Scanner(System.in);
         String choice = input.nextLine();
 
@@ -50,52 +63,46 @@ public class UserInterface {
                 break;
             default:
                 System.out.println("Please choose the correct option");
-                printMenu();
+                displayMenu();
                 scanMenuChoice();
                 break;
         }
     }
-    
+
     /**
      * add item to todolist
      */
-    public void addTodo()
-    {
+    public void addTodo() {
+    Todo todo1 = new Todo();   
         
     }
-    
+
     /**
      * removeTodo remove item from todolist
      */
-    public void removeTodo()
-    {
-    
+    public void removeTodo() {
+
     }
-    
+
     /**
      * updateTodo update todo list
      */
-    public void updateTodo()
-    {
-        
+    public void updateTodo() {
+
     }
-    
+
     /**
      * generateList
      */
-    public void generateList()
-    {
-        
+    public void generateList() {
+
     }
-    
+
     /**
      * Exit System
      */
-    public void exitSystem()
-    {
-        
+    public void exitSystem() {
+
     }
-   
-    
 
 }
