@@ -63,8 +63,7 @@ public class UserInterface {
                 break;
             default:
                 System.out.println("Please choose the correct option");
-                displayMenu();
-                scanMenuChoice();
+                displayMenu();                
                 break;
         }
     }
