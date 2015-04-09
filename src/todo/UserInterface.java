@@ -21,7 +21,8 @@ public class UserInterface {
 
     /**
      * Program starts here
-     * @param args 
+     *
+     * @param args
      */
     public static void main(String[] args) {
         //UserInterface ui = new UserInterface();
@@ -29,7 +30,6 @@ public class UserInterface {
         exitCheck = "s";
         displayMenu();
         scanMenuChoice();
-       
 
     }
 
@@ -40,7 +40,7 @@ public class UserInterface {
         System.out.println("Option c: Update Todo");
         System.out.println("Option d: Generate things due today");
         System.out.println("Option e: Exit System");
-        System.out.println("Please enter your choice");        
+        System.out.println("Please enter your choice");
     }
 
     /**
@@ -50,31 +50,31 @@ public class UserInterface {
 
         Scanner input = new Scanner(System.in);
         String choice = input.nextLine();
-        
-        while (exitCheck.contains("s")){
-        switch (choice) {
-            case "a":
-                addTodo();
-                break;
-            case "b":
-                removeTodo();
-                break;
-            case "c":
-                updateTodo();
-                break;
-            case "d":
-                generateList();
-                break;
-            case "e":
-                exitSystem(); // save everything
-                exitCheck = "b";
-                break;
-            default:
-                System.out.println("Please choose the correct option");
-                displayMenu();
-                choice = input.nextLine();
-                break;
-        }
+
+        while (exitCheck.contains("s")) {
+            switch (choice) {
+                case "a":
+                    addTodo();
+                    break;
+                case "b":
+                    removeTodo();
+                    break;
+                case "c":
+                    updateTodo();
+                    break;
+                case "d":
+                    generateList();
+                    break;
+                case "e":
+                    exitSystem(); // save everything
+                    exitCheck = "b"; // check exitCheck to a non s value which exits the program
+                    break;
+                default:
+                    System.out.println("Please choose the correct option");
+                    displayMenu();
+                    choice = input.nextLine();
+                    break;
+            }
         }
     }
 
@@ -114,13 +114,12 @@ public class UserInterface {
     public static void exitSystem() {
 
     }
-    
+
     /**
      * Load list of todo's
      */
-    public static void loadList(){
-        
-        
+    public static void loadList() {
+
     }
 
 }

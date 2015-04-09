@@ -8,6 +8,7 @@ package todo;
 import java.io.File;
 import java.util.ArrayList;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -23,13 +24,11 @@ public class Todo {
     /**
      * @param args the command line arguments
      */
-
-
     Todo() {
         tasks = new ArrayList();
         getDone = new Task();
         loadTasks();
-        
+
     }
 
     /**
@@ -91,13 +90,12 @@ public class Todo {
         //reader.fileReader1();// sometimes get an error here about ArrayIndexOutofBoundsException
 //        addTask();
 
-       try {
+        try {
             Scanner input = new Scanner(System.in);
 //            System.out.print("Enter the file name with extention : ");
             File file = new File("Todo.txt");
 
             input = new Scanner(file);
-
 
             while (input.hasNextLine()) {
                 String line = input.nextLine();
@@ -109,6 +107,22 @@ public class Todo {
             ex.printStackTrace();
         }
 
+    }
+
+    public void saveTasks() {
+        try {
+            PrintWriter writer = new PrintWriter("Todo.txt", "UTF-8");
+            for (int i = 0; i < tasks.size(); i++) {
+                Task get = tasks.get(i);
+                String info = get.getDueDate() + " " + get.getPriority() + "" + get.getStatus() + "" + get.getTaskDesc() ;
+                writer.println(info);
+            }
+            
+                        writer.close();
+        } catch (Exception e) {
+            
+            System.out.println(e);
+        }
     }
 
 }
