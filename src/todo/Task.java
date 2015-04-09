@@ -17,11 +17,6 @@ public class Task {
     private String priority; // Priority of the task
     private String status; // done or not-done
 
-    /**
-     * main
-     */
-    public static void main(String args[]) {
-    }
 
     /**
      * Constructor initalises the program

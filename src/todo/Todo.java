@@ -5,13 +5,9 @@
  */
 package todo;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
@@ -27,16 +23,13 @@ public class Todo {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        Todo ui = new Todo();
-        //ui.addTask();
-    }
+
 
     Todo() {
         tasks = new ArrayList();
         getDone = new Task();
         loadTasks();
+        
     }
 
     /**
@@ -58,7 +51,6 @@ public class Todo {
         boolean test = false;
         while (test == false) {
 
-            
             System.out.println("What needs to get done?");
             String getMeDone = input.nextLine();
             System.out.println("Priority");
@@ -80,8 +72,8 @@ public class Todo {
             // Y results in program continuing. N results in while loop stopping.
             if ((continueya.contentEquals("N")) || continueya.contentEquals("n")) {
                 test = true;
-                Controller write = new Controller();
-                write.writeFile("Todo.txt");
+                //Controller write = new Controller();
+                //write.writeFile("Todo.txt");
             } else {
                 continue;
             }
@@ -95,11 +87,28 @@ public class Todo {
      */
     public void loadTasks() {
         // load up list of tasks
-        Controller reader = new Controller();
-        reader.fileReader1();// sometimes get an error here about ArrayIndexOutofBoundsException
-        addTask();
+        //Controller reader = new Controller();
+        //reader.fileReader1();// sometimes get an error here about ArrayIndexOutofBoundsException
+//        addTask();
+
+       try {
+            Scanner input = new Scanner(System.in);
+//            System.out.print("Enter the file name with extention : ");
+            File file = new File("Todo.txt");
+
+            input = new Scanner(file);
+
+
+            while (input.hasNextLine()) {
+                String line = input.nextLine();
+                System.out.println(line);
+            }
+            input.close();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
     }
-
-
 
 }

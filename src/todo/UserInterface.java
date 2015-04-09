@@ -15,36 +15,43 @@ import java.util.Scanner;
  *
  */
 public class UserInterface {
-    
-    private Todo todo1;
-            
-    public static void main(String[] args){
-        UserInterface ui = new UserInterface();
-        ui.displayMenu();
-        
+
+    private static Todo todo1 = new Todo();
+    private static String exitCheck = "";
+
+    /**
+     * Program starts here
+     * @param args 
+     */
+    public static void main(String[] args) {
+        //UserInterface ui = new UserInterface();
+//        todo1.loadTasks();
+        exitCheck = "s";
+        displayMenu();
+        scanMenuChoice();
+       
+
     }
-    
 
-
-    public void displayMenu() {
+    public static void displayMenu() {
         System.out.println("Menu for ToDo System");
         System.out.println("Option a: Add Todo");
         System.out.println("Option b: Remove Todo");
         System.out.println("Option c: Update Todo");
         System.out.println("Option d: Generate things due today");
         System.out.println("Option e: Exit System");
-        System.out.println("Please enter your choice");
-        scanMenuChoice();
+        System.out.println("Please enter your choice");        
     }
 
     /**
      * Method to scan choice from the keyboard.
      */
-    private void scanMenuChoice() {
-        
+    private static void scanMenuChoice() {
+
         Scanner input = new Scanner(System.in);
         String choice = input.nextLine();
-
+        
+        while (exitCheck.contains("s")){
         switch (choice) {
             case "a":
                 addTodo();
@@ -59,49 +66,61 @@ public class UserInterface {
                 generateList();
                 break;
             case "e":
-                exitSystem();
+                exitSystem(); // save everything
+                exitCheck = "b";
                 break;
             default:
                 System.out.println("Please choose the correct option");
-                displayMenu();                
+                displayMenu();
+                choice = input.nextLine();
                 break;
+        }
         }
     }
 
     /**
      * add item to todolist
      */
-    public void addTodo() {
-    Todo todo1 = new Todo();   
-        
+    public static void addTodo() {
+        todo1.addTask();
+        scanMenuChoice();
+
     }
 
     /**
      * removeTodo remove item from todolist
      */
-    public void removeTodo() {
+    public static void removeTodo() {
 
     }
 
     /**
      * updateTodo update todo list
      */
-    public void updateTodo() {
+    public static void updateTodo() {
 
     }
 
     /**
      * generateList
      */
-    public void generateList() {
+    public static void generateList() {
 
     }
 
     /**
      * Exit System
      */
-    public void exitSystem() {
+    public static void exitSystem() {
 
+    }
+    
+    /**
+     * Load list of todo's
+     */
+    public static void loadList(){
+        
+        
     }
 
 }
