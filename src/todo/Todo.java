@@ -18,7 +18,7 @@ import java.util.Scanner;
  */
 public class Todo {
 
-    private ArrayList<Task> tasks; // List of Tasks
+    public ArrayList<Task> tasks; // List of Tasks
     private Task getDone; //Instance of Task
 
     /**
@@ -103,9 +103,14 @@ public class Todo {
             }
             input.close();
 
-        } catch (Exception ex) {
-            ex.printStackTrace();
+        } catch (NullPointerException ex) {
+            System.out.println("Todo.txt file not found " + ex);
         }
+        catch (Exception ex) {
+            ex.printStackTrace();
+        } 
+        
+       
 
     }
 

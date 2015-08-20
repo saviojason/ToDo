@@ -1,0 +1,24 @@
+Wish list
+#########
+* I would like to program to be able to store stuff in a MySQL db, MS-SQL, Postgres, MariaDB, CSV file
+* The program should be placed on an Azure cloud
+* The program to be available in Android, iOS and Windows Phones and Browsers
+* The program to work fine under Windows, Linux and MAC
+* There should be a secure login feature
+* Program should be able to handle multiple users
+* Program to be able to provide reminders of overdue items
+* Program to be able to provide reminders over email, sms, web-popup, social media
+* Program to be able to communicate with other programs such as suitecrm, sugarcrm, salesforce, vitiger
+* Program to be able to validate user input
+* Display graphs of whats going on with indicators as to what times are running dangerous late
+* 
+
+
+
+20/8/2015
+Revisiting my todo app
+Just going to go through testing everything. Will try and include some documentation as well. There much be a standard way of starting my program. 
+The way to start the program is through the UserInterface.java as this is where the main method is.
+
+
+
