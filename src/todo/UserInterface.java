@@ -25,7 +25,7 @@ public class UserInterface {
     private static Todo todo1 = new Todo();
     //creates a variable for us to check if its time to exit
     private static String exitCheck = "";
-    private static String todonumber ="";
+    private static String todonumber = "";
 
     /**
      * Program starts here
@@ -41,6 +41,9 @@ public class UserInterface {
 
     }
 
+    /**
+     * Displays a short menu of what items are available
+     */
     public static void displayMenu() {
         System.out.println("#######################");
         System.out.println("Menu for ToDo System");
@@ -136,7 +139,7 @@ public class UserInterface {
     public static void removeTodoItem() {
 
         todo1.tasks.remove(todonumber);
-        
+
     }
 
     /**
