@@ -39,8 +39,35 @@ public class UserInterface {
         displayMenu();
         scanMenuChoice();
 
+    }    
+    
+    /**
+     * Display launcher menu at start
+     */
+    public static void displayLauncher(){
+    	System.out.println("Website");
+    	System.out.println("Android");
+    	System.out.println("iPhone");
+    	System.out.println("GUI");
+    	
     }
-
+    
+    /**
+     * Display save menu
+     */
+    public static void displaySaveMenu(){
+    	System.out.println("Save in CSV file");
+    	System.out.println("Save in local Database");
+    }
+    
+    /**
+     * Display Load from menu
+     */
+    public static void displayLoadFromMenu(){
+    	System.out.println("Load from CSV file");
+    	System.out.println("Load from Database");
+    }
+    
     /**
      * Displays a short menu of what items are available
      */
