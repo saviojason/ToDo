@@ -36,6 +36,7 @@ public class UserInterface {
         // UserInterface ui = new UserInterface();
         // todo1.loadTasks();
         exitCheck = "s"; // set a value in the register to ensure program is running
+        displayLauncher();
         displayMenu();
         scanMenuChoice();
 
@@ -45,10 +46,12 @@ public class UserInterface {
      * Display launcher menu at start
      */
     public static void displayLauncher(){
-    	System.out.println("Website");
-    	System.out.println("Android");
-    	System.out.println("iPhone");
-    	System.out.println("GUI");
+    	System.out.println("################################################");
+    	System.out.println("Which interface would you like to load today ?");
+    	System.out.println("1. Website");
+    	System.out.println("2. Android");
+    	System.out.println("3. iPhone");
+    	System.out.println("4. Java GUI");
     	
     }
     

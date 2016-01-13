@@ -19,15 +19,13 @@ import java.util.Scanner;
  */
 public class Todo {
 
-    public ArrayList<Task> tasks; // List of Tasks
-    private Task getDone; //Instance of Task
+    public ArrayList<Task> tasks = new ArrayList<Task>(); // List of Tasks
+    private Task getDone = new Task(); //Instance of Task
 
     /**
      * @param args the command line arguments
      */
     Todo() {
-        tasks = new ArrayList();
-        getDone = new Task();
         loadTasks();
 
     }
@@ -90,6 +88,9 @@ public class Todo {
         //Controller reader = new Controller();
         //reader.fileReader1();// sometimes get an error here about ArrayIndexOutofBoundsException
 //        addTask();
+    	System.out.println("#########################");
+    	System.out.println("Stuff to do");
+    	
 
         try {
             Scanner input = new Scanner(System.in);
@@ -111,7 +112,7 @@ public class Todo {
             ex.printStackTrace();
         } 
         
-       
+     System.out.println("");  
 
     }
 
